@@ -92,12 +92,12 @@ export default class App extends Component {
   render() {
     return (
       // remove min-vh-100
-      <div className="App">
+      <div className="App min-vh-100">
         <Nav
           onRouteChange={this.onRouteChange}
           isSignedIn={this.state.isSignedIn}
         />
-        <ParticlesBg type="color" num={1} bg={true} />
+        <ParticlesBg className="min-vh-100" type="color" num={1} bg={true} />
         {this.state.route === 'home' ? (
           <>
             <Logo />
