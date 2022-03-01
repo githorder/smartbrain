@@ -97,7 +97,7 @@ export default class App extends Component {
           onRouteChange={this.onRouteChange}
           isSignedIn={this.state.isSignedIn}
         />
-        <ParticlesBg type="color" num={5} bg={true} />
+        <ParticlesBg type="color" num={1} bg={true} />
         {this.state.route === 'home' ? (
           <>
             <Logo />
