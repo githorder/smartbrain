@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Particles from 'react-tsparticles';
 import ParticlesBg from 'particles-bg';
 import 'tachyons';
 
@@ -12,49 +11,6 @@ import ImageInputForm from './components/ImageInputForm/ImageInputForm';
 import FaceDetection from './components/FaceDetection/FaceDetection';
 import SignIn from './components/SignIn/SignIn';
 import Registration from './components/Registration/Registration';
-
-// const particleOption = {
-//   fpsLimit: 60,
-//   particles: {
-//     color: {
-//       value: '#fff',
-//     },
-//     links: {
-//       color: '#fff',
-//       distance: 150,
-//       enable: true,
-//       opacity: 0.5,
-//       width: 1,
-//     },
-//     collisions: {
-//       enable: true,
-//     },
-//     move: {
-//       direction: 'none',
-//       enable: true,
-//       random: true,
-//       speed: 1,
-//     },
-//     number: {
-//       density: {
-//         enable: true,
-//         value_area: 500,
-//       },
-//       value: 60,
-//     },
-//     opacity: {
-//       value: 1,
-//     },
-//     shape: {
-//       type: 'circle',
-//     },
-//     size: {
-//       random: true,
-//       value: 0.1,
-//     },
-//   },
-//   detectRetina: true,
-// };
 
 export default class App extends Component {
   constructor() {
@@ -141,11 +97,6 @@ export default class App extends Component {
           onRouteChange={this.onRouteChange}
           isSignedIn={this.state.isSignedIn}
         />
-        {/* <Particles
-          className="particles"
-          id="tsparticles"
-          options={particleOption}
-        /> */}
         <ParticlesBg type="color" bg={true} />
         {this.state.route === 'home' ? (
           <>
