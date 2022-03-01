@@ -13,7 +13,7 @@ body {
   background: -webkit-linear-gradient(to bottom, #6d678e, #f6b5cc);
   background: linear-gradient(to bottom, #6d678e, #f6b5cc);
 
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .bg-mine {
