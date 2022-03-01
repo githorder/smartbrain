@@ -13,7 +13,7 @@ body {
   background: -webkit-linear-gradient(to bottom, #6d678e, #f6b5cc);
   background: linear-gradient(to bottom, #6d678e, #f6b5cc);
 
-  /* height: 100vh; */
+  height: 100vh;
 }
 
 .bg-mine {
@@ -62,4 +62,10 @@ body {
 
 .outline-mine-onhover:hover {
   outline: 2px solid #fff;
+}
+
+@media only screen and (max-width: 420px) {
+  html {
+    font-size: 13px;
+  }
 }
