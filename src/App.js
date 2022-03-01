@@ -135,7 +135,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App min-vh-100">
+      // remove min-vh-100
+      <div className="App">
         <Nav
           onRouteChange={this.onRouteChange}
           isSignedIn={this.state.isSignedIn}
