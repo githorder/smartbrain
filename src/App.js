@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import ParticlesBg from 'particles-bg';
-import 'tachyons';
 
 import './App.css';
 
@@ -32,36 +30,38 @@ export default class App extends Component {
   };
 
   onClickBtn = async () => {
-    this.setState({ imageURL: this.state.input });
-    try {
-      const response = await fetch(
-        'https://smartbrain-api-diyor.herokuapp.com/image',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            input: this.state.input,
-          }),
+    if (this.state.input !== '') {
+      this.setState({ imageURL: this.state.input });
+      try {
+        const response = await fetch(
+          'https://smartbrain-api-diyor.herokuapp.com/image',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              input: this.state.input,
+            }),
+          }
+        );
+
+        const result = await response.text();
+        const landmarksObj = JSON.parse(result).outputs[0].data;
+
+        this.setState({ landmarksObj });
+        if (typeof landmarksObj === 'object') {
+          fetch('https://smartbrain-api-diyor.herokuapp.com/image', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: this.state.user.id }),
+          })
+            .then((response) => response.json())
+            .then((rank) => {
+              this.setState({ user: Object.assign(this.state.user, { rank }) });
+            });
         }
-      );
-
-      const result = await response.text();
-      const landmarksObj = JSON.parse(result).outputs[0].data;
-
-      this.setState({ landmarksObj });
-      if (typeof landmarksObj === 'object') {
-        fetch('https://smartbrain-api-diyor.herokuapp.com/image', {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id: this.state.user.id }),
-        })
-          .then((response) => response.json())
-          .then((rank) => {
-            this.setState({ user: Object.assign(this.state.user, { rank }) });
-          });
+      } catch (err) {
+        console.log('error', err);
       }
-    } catch (err) {
-      console.log('error', err);
     }
   };
 
@@ -91,13 +91,12 @@ export default class App extends Component {
 
   render() {
     return (
-      // remove min-vh-100
-      <div className="App min-vh-100">
+      <div className="p-9 relative z-10 min-h-screen w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-hero-pattern before:bg-cover before:bg-center before:-z-10 before:block">
         <Nav
+          className=""
           onRouteChange={this.onRouteChange}
           isSignedIn={this.state.isSignedIn}
         />
-        <ParticlesBg className="min-vh-100" type="color" num={1} bg={true} />
         {this.state.route === 'home' ? (
           <>
             <Logo />
