@@ -44,7 +44,10 @@ class Registration extends React.Component {
   render() {
     return (
       <div className="w-full flex justify-center">
-        <form className="rounded pl-12 pr-12 pt-16 pb-7 w-450  bg-white">
+        <form
+          className="rounded pl-12 pr-12 pt-16 pb-7 w-450bg-white"
+          method="POST"
+        >
           <div>
             <span className="inline-block w-full text-center text-3xl font-medium text-slate-900 uppercase pb-14">
               {'Register Form'}
