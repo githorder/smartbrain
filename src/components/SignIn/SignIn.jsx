@@ -46,10 +46,7 @@ class SignIn extends React.Component {
 
     return (
       <div className="w-full flex justify-center">
-        <form
-          className="rounded pl-12 pr-12 pt-16 pb-7 w-450  bg-white"
-          method="POST"
-        >
+        <div className="rounded pl-12 pr-12 pt-16 pb-7 w-450  bg-white">
           <div>
             <span className="inline-block w-full text-center text-3xl font-medium text-slate-900 uppercase pb-14">
               {'Sign In Form'}
@@ -122,7 +119,7 @@ class SignIn extends React.Component {
               />
             </div>
           </div>
-        </form>
+        </div>
       </div>
     );
   }
