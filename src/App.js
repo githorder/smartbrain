@@ -20,7 +20,7 @@ export default class App extends Component {
       landmarksObj: {},
       box: {},
       isSignedIn: false,
-      route: 'home',
+      route: 'signin',
       user: {},
     };
   }
