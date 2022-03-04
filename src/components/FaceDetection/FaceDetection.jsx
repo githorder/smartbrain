@@ -20,17 +20,20 @@ const FaceDetection = ({ onloadImg, imageURL, box, landmarksObj }) => {
   }
 
   return (
-    <div className="flex justify-center">
-      <div className="relative mb4 flex items-center justify-center tilty">
+    <div className="flex justify-center mt-10">
+      <div className="relative flex items-center justify-center">
         <img
           onLoad={onloadImg}
-          className="br2"
+          className="rounded-md"
           width="300px"
           height="auto"
           src={imageURL}
           alt=""
         />
-        <div style={styleForDetectBox} className="absolute pointer"></div>
+        <div
+          style={styleForDetectBox}
+          className="absolute cursor-pointer"
+        ></div>
       </div>
     </div>
   );
