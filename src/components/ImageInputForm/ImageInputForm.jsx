@@ -8,7 +8,7 @@ const ImageInputForm = ({ onChangeInput, onClickBtn }) => {
           id="search"
           onChange={onChangeInput}
           autoComplete={'off'}
-          className="h-16 pl-12 sm:w-450 rounded-md bg-transparent shadow-2xl placeholder:text-slate-50 focus:outline-none focus:border-slate-50 focus:border-2 outline-transparent bg-neutral-200"
+          className="h-16 pl-12 sm:w-450 rounded-md bg-transparent shadow-2xl placeholder:text-slate-50 focus:outline-none focus:border-slate-50 focus:border-2 outline-transparent"
           type="search"
           placeholder="Type image URL to detect a face"
         />
