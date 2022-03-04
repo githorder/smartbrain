@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
 *,
 *::before,
@@ -14,17 +13,23 @@
 }
 
 html {
-  font-family: 'Fruktur', 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 @media only screen and (max-width: 768px) {
   html {
-    font-size: 19px;
+    font-size: 15px;
   }
 }
 
 @media only screen and (max-width: 420px) {
   html {
     font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 10px;
   }
 }

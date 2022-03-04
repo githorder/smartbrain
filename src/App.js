@@ -20,7 +20,7 @@ export default class App extends Component {
       landmarksObj: {},
       box: {},
       isSignedIn: false,
-      route: 'signin',
+      route: 'home',
       user: {},
     };
   }
@@ -93,7 +93,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="p-9 relative z-10 min-h-screen w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-hero-pattern before:bg-cover before:bg-center before:-z-10 before:block">
+      <div className="p-9 relative z-10 min-h-screen w-full bg-gradient-to-r from-cyan-500 to-blue-500 before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-hero-pattern before:bg-cover before:bg-center before:-z-10 before:block flex flex-col items-center justify-between">
         <Nav
           onRouteChange={this.onRouteChange}
           isSignedIn={this.state.isSignedIn}

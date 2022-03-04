@@ -44,15 +44,15 @@ class Registration extends React.Component {
   render() {
     return (
       <div className="w-full flex justify-center">
-        <div className="rounded pl-12 pr-12 pt-16 pb-7 w-450 bg-white">
+        <div className="rounded pl-12 pr-12 pt-16 pb-7 w-450 bg-white shadow-lg mb-72 lg:mb-96 xl:mb-0">
           <div>
             <span className="inline-block w-full text-center text-3xl font-medium text-slate-900 uppercase pb-14">
-              {'Register Form'}
+              {'Register'}
             </span>
             <div className="relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 absolute top-6 translate-x-[-40%] translate-y-[-10%] left-7 stroke-pink-600 stroke-1"
+                className="h-6 w-6 absolute top-6 translate-x-[-40%] translate-y-[-10%] left-7 stroke-slate-900 stroke-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -65,7 +65,7 @@ class Registration extends React.Component {
                 />
               </svg>
               <input
-                className="h-16 w-full pl-16 bg-neutral-200 outline-transparent mb-4"
+                className="h-16 w-full pl-16 bg-neutral-200 outline-transparent mb-4 placeholder:lowercase focus:border-slate-900 focus:border-2"
                 placeholder="Name"
                 type="text"
                 name="name"
@@ -77,7 +77,7 @@ class Registration extends React.Component {
             <div className="relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="absolute top-6 translate-x-[-40%] translate-y-[-10%] left-7 h-6 w-6 stroke-pink-600 stroke-1"
+                className="absolute top-6 translate-x-[-40%] translate-y-[-10%] left-7 h-6 w-6 stroke-slate-900 stroke-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -90,7 +90,7 @@ class Registration extends React.Component {
                 />
               </svg>
               <input
-                className="h-16 w-full pl-16 bg-neutral-200 outline-transparent mb-4"
+                className="h-16 w-full pl-16 bg-neutral-200 outline-transparent mb-4 placeholder:lowercase focus:border-slate-900 focus:border-2"
                 placeholder="Email"
                 type="email"
                 name="email-address"
@@ -102,7 +102,7 @@ class Registration extends React.Component {
             <div className="relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="absolute top-6 translate-x-[-40%] translate-y-[-10%] left-7 h-6 w-6 stroke-pink-600 stroke-1"
+                className="absolute top-6 translate-x-[-40%] translate-y-[-10%] left-7 h-6 w-6 stroke-slate-900 stroke-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -115,7 +115,7 @@ class Registration extends React.Component {
                 />
               </svg>
               <input
-                className="h-16 w-full pl-16 bg-neutral-200 outline-transparent mb-4"
+                className="h-16 w-full pl-16 bg-neutral-200 outline-transparent mb-4 placeholder:lowercase focus:border-slate-900 focus:border-2"
                 placeholder="Password"
                 type="password"
                 name="password"
@@ -129,7 +129,7 @@ class Registration extends React.Component {
           <div className="mt-5 w-full">
             <input
               onClick={this.onClickRegister}
-              className="h-16 w-full bg-pink-600 uppercase text-slate-50 text-base font-medium cursor-pointer mb-5 hover:bg-pink-700"
+              className="h-16 w-full bg-gradient-to-r from-cyan-500 to-blue-500 uppercase text-slate-50 text-base font-medium cursor-pointer shadow-2xl mb-5 hover:translate-y-1.5 ease-in duration-300"
               type="submit"
               value="Register"
             />

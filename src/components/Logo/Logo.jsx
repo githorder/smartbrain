@@ -1,16 +1,15 @@
 import React from 'react';
 import Tilty from 'react-tilty';
 
-import logo from './brain.png';
+import logo from './javascript_illustration.svg';
 
 const Logo = () => {
   return (
-    <Tilty
-      className="bg-gradient-to-r from-fuchsia-500 to-violet-500 w-40 h-40 rounded-xl p-8"
-      scale={1.05}
-    >
-      <img src={logo} alt="logo" />
-    </Tilty>
+    <div className="absolute top-[20%] left-1/2 -translate-x-1/2">
+      <Tilty scale={1.05}>
+        <img className="w-48" src={logo} alt="logo" />
+      </Tilty>
+    </div>
   );
 };
 

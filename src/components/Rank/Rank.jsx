@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect';
 
 const Rank = ({ userName, rank }) => {
   return (
-    <div className="p-20 text-3xl font-['Creepster'] text-center w-full  text-gray-50">
+    <div className="p-20 text-3xl text-center  text-gray-50 h-40 w-[32rem]">
       <Typewriter
         options={{
           strings: [

@@ -46,15 +46,15 @@ class SignIn extends React.Component {
 
     return (
       <div className="w-full flex justify-center">
-        <div className="rounded pl-12 pr-12 pt-16 pb-7 w-450  bg-white">
+        <div className="rounded pl-12 pr-12 pt-16 pb-7 w-450 bg-white shadow-lg mb-72 lg:mb-96 xl:mb-0">
           <div>
             <span className="inline-block w-full text-center text-3xl font-medium text-slate-900 uppercase pb-14">
-              {'Sign In Form'}
+              {'Sign In'}
             </span>
             <div className="relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="absolute top-6 translate-x-[-40%] translate-y-[-10%] left-7 h-6 w-6 stroke-pink-600 stroke-1"
+                className="absolute top-6 translate-x-[-40%] translate-y-[-10%] left-7 h-6 w-6 stroke-slate-900 stroke-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -67,7 +67,7 @@ class SignIn extends React.Component {
                 />
               </svg>
               <input
-                className="h-16 w-full pl-16 bg-neutral-200 outline-transparent mb-4"
+                className="h-16 w-full pl-16 bg-neutral-200 outline-transparent mb-4 placeholder:lowercase focus:border-slate-900 focus:border-2"
                 placeholder="Email"
                 onChange={this.onChangeEmail}
                 type="email"
@@ -79,7 +79,7 @@ class SignIn extends React.Component {
             <div className="relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="absolute top-6 translate-x-[-40%] translate-y-[-10%] left-7 h-6 w-6 stroke-pink-600 stroke-1"
+                className="absolute top-6 translate-x-[-40%] translate-y-[-10%] left-7 h-6 w-6 stroke-slate-900 stroke-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -92,7 +92,7 @@ class SignIn extends React.Component {
                 />
               </svg>
               <input
-                className="h-16 w-full pl-16 bg-neutral-200 outline-transparent mb-4"
+                className="h-16 w-full pl-16 bg-neutral-200 outline-transparent mb-4 placeholder:lowercase focus:border-slate-900 focus:border-2"
                 onChange={this.onChangePassword}
                 type="password"
                 name="password"
@@ -104,7 +104,7 @@ class SignIn extends React.Component {
 
           <div className="mt-5 flex flex-col w-full">
             <input
-              className="h-16 w-full bg-pink-600 uppercase text-slate-50 text-base font-medium cursor-pointer mb-20 hover:bg-pink-700"
+              className="h-16 w-full bg-gradient-to-r from-cyan-500 to-blue-500 uppercase text-slate-50 text-base font-medium cursor-pointer mb-20 shadow-2xl hover:translate-y-1.5 ease-in duration-300"
               onClick={this.onClickSignin}
               type="submit"
               value="Sign in"
@@ -112,7 +112,7 @@ class SignIn extends React.Component {
             <div className="w-full text-center">
               <span className="text-base text-[#999]">Not a member? </span>
               <input
-                className="text-base underline text-[#999] cursor-pointer hover:text-pink-600"
+                className="text-base underline text-[#999] cursor-pointer hover:text-cyan-500"
                 onClick={() => onRouteChange('register')}
                 type="submit"
                 value="Register"
