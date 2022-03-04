@@ -29,7 +29,7 @@ const ImageInputForm = ({ onChangeInput, onClickBtn }) => {
         <div className="absolute translate-x-1/2 top-[130%] right-2/4">
           <button
             onClick={onClickBtn}
-            className="bg-slate-50 hover:text-cyan-500 w-20 flex justify-center items-center rounded-md py-2 px-16 uppercase shadow-2xl"
+            className="bg-slate-50 hover:text-cyan-500 w-20 flex justify-center items-center rounded-md py-2 px-16 mb-4 uppercase shadow-2xl"
           >
             {'detect'}
           </button>
