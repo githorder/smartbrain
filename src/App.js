@@ -91,6 +91,17 @@ export default class App extends Component {
     this.setState({ route });
   };
 
+  onClickSVG = ({ target }) => {
+    this.setState({
+      box: {},
+      landmarksObj: {},
+      input: '',
+      imageURL: '',
+    });
+
+    target.parentElement.parentElement.firstElementChild.value = '';
+  };
+
   render() {
     return (
       <div className="p-9 relative z-10 min-h-screen w-full bg-gradient-to-r from-cyan-500 to-blue-500 before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-hero-pattern before:bg-cover before:bg-center before:-z-10 before:block flex flex-col items-center justify-start">
@@ -109,6 +120,7 @@ export default class App extends Component {
               <ImageInputForm
                 onClickBtn={this.onClickBtn}
                 onChangeInput={this.onChangeInput}
+                onClickSVG={this.onClickSVG}
               />
               <FaceDetection
                 onloadImg={this.onloadImg}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ImageInputForm = ({ onChangeInput, onClickBtn }) => {
+const ImageInputForm = ({ onChangeInput, onClickBtn, onClickSVG }) => {
   return (
     <div className="w-full justify-center items-center inline-flex">
       <div className="relative">
@@ -8,7 +8,7 @@ const ImageInputForm = ({ onChangeInput, onClickBtn }) => {
           id="search"
           onChange={onChangeInput}
           autoComplete={'off'}
-          className="h-16 pl-12 rounded-md bg-neutral-200 shadow-2xl placeholder:text-slate-900 placeholder:font-extralight focus:outline-none focus:border-cyan-500 focus:border-2 outline-transparent w-80"
+          className="h-16 pl-12 rounded-md bg-blue-50 shadow-2xl placeholder:text-slate-900 placeholder:font-extralight focus:outline-none focus:border-cyan-500 focus:border-2 outline-transparent w-80"
           type="search"
           placeholder="Type image URL to detect a face"
         />
@@ -33,6 +33,19 @@ const ImageInputForm = ({ onChangeInput, onClickBtn }) => {
           >
             {'detect'}
           </button>
+          <svg
+            onClick={onClickSVG}
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-10 fill-red-700 w-10 rounded-full shadow-md p-2.5 absolute left-40 cursor-pointer hover:fill-red-900 top-0"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
+          </svg>
         </div>
       </div>
     </div>
