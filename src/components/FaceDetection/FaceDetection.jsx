@@ -20,7 +20,7 @@ const FaceDetection = ({ onloadImg, imageURL, box, landmarksObj }) => {
   }
 
   return (
-    <div className="flex justify-center mt-10">
+    <div className="flex justify-center mt-24">
       <div className="relative flex items-center justify-center">
         <img
           onLoad={onloadImg}
