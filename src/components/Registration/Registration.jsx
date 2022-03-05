@@ -65,7 +65,7 @@ class Registration extends React.Component {
                 />
               </svg>
               <input
-                className="h-16 w-full pl-16 bg-neutral-200 outline-transparent mb-4 placeholder:lowercase focus:border-slate-900 focus:border-2"
+                className="h-16 w-full pl-16 bg-blue-50 outline-transparent mb-4 placeholder:lowercase focus:border-cyan-500 focus:border-2"
                 placeholder="Name"
                 type="text"
                 name="name"
@@ -90,7 +90,7 @@ class Registration extends React.Component {
                 />
               </svg>
               <input
-                className="h-16 w-full pl-16 bg-neutral-200 outline-transparent mb-4 placeholder:lowercase focus:border-slate-900 focus:border-2"
+                className="h-16 w-full pl-16 bg-blue-50 outline-transparent mb-4 placeholder:lowercase focus:border-cyan-500 focus:border-2"
                 placeholder="Email"
                 type="email"
                 name="email-address"
@@ -115,7 +115,7 @@ class Registration extends React.Component {
                 />
               </svg>
               <input
-                className="h-16 w-full pl-16 bg-neutral-200 outline-transparent mb-4 placeholder:lowercase focus:border-slate-900 focus:border-2"
+                className="h-16 w-full pl-16 bg-blue-50 outline-transparent mb-4 placeholder:lowercase focus:border-cyan-500 focus:border-2"
                 placeholder="Password"
                 type="password"
                 name="password"
