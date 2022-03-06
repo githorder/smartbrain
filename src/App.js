@@ -99,7 +99,7 @@ export default class App extends Component {
       imageURL: '',
     });
 
-    target.parentElement.parentElement.firstElementChild.value = '';
+    target.parentElement.firstElementChild.value = '';
   };
 
   render() {

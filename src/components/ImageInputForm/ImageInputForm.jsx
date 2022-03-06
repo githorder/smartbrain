@@ -26,26 +26,26 @@ const ImageInputForm = ({ onChangeInput, onClickBtn, onClickSVG }) => {
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
           />
         </svg>
+        <svg
+          onClick={onClickSVG}
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-16 fill-slate-50 w-16 rounded-md shadow-md p-2.5 absolute right-0 cursor-pointer hover:translate-x-1.5 active:scale-90 ease-in duration-300 top-0 bg-red-400"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clipRule="evenodd"
+          />
+        </svg>
         <div className="absolute translate-x-1/2 top-[130%] right-2/4">
           <button
             onClick={onClickBtn}
-            className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:text-slate-900 w-20 flex justify-center items-center rounded-md py-2 px-16 mb-4 uppercase shadow-2xl text-slate-50"
+            className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:translate-y-1.5 ease-in duration-300 w-20 flex justify-center items-center rounded-md py-2 px-16 mb-4 uppercase shadow-2xl text-slate-50"
           >
             {'detect'}
           </button>
-          <svg
-            onClick={onClickSVG}
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-10 fill-red-700 w-10 rounded-full shadow-md p-2.5 absolute left-40 cursor-pointer hover:fill-red-900 top-0"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
         </div>
       </div>
     </div>
