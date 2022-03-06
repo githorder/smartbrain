@@ -22,6 +22,7 @@ export default class App extends Component {
       isSignedIn: false,
       route: 'signin',
       user: {},
+      hiddenSpin: true,
     };
   }
 
@@ -33,6 +34,8 @@ export default class App extends Component {
     if (this.state.input !== '') {
       this.setState({ imageURL: this.state.input });
       try {
+        this.setState({ hiddenSpin: false });
+
         const response = await fetch(
           'https://smartbrain-api-diyor.herokuapp.com/image',
           {
@@ -47,6 +50,7 @@ export default class App extends Component {
         const result = await response.text();
         const landmarksObj = JSON.parse(result).outputs[0].data;
 
+        this.setState({ hiddenSpin: true });
         this.setState({ landmarksObj });
         if (typeof landmarksObj === 'object') {
           fetch('https://smartbrain-api-diyor.herokuapp.com/image', {
@@ -60,6 +64,7 @@ export default class App extends Component {
             });
         }
       } catch (err) {
+        this.setState({ hiddenSpin: true });
         console.log('error', err);
       }
     } else {
@@ -118,6 +123,7 @@ export default class App extends Component {
                 rank={this.state.user.rank}
               />
               <ImageInputForm
+                hiddenSpin={this.state.hiddenSpin}
                 onClickBtn={this.onClickBtn}
                 onChangeInput={this.onChangeInput}
                 onClickSVG={this.onClickSVG}

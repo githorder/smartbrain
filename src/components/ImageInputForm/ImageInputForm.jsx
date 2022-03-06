@@ -1,6 +1,11 @@
 import React from 'react';
 
-const ImageInputForm = ({ onChangeInput, onClickBtn, onClickSVG }) => {
+const ImageInputForm = ({
+  onChangeInput,
+  onClickBtn,
+  onClickSVG,
+  hiddenSpin,
+}) => {
   return (
     <div className="w-full justify-center items-center inline-flex">
       <div className="relative">
@@ -29,7 +34,7 @@ const ImageInputForm = ({ onChangeInput, onClickBtn, onClickSVG }) => {
         <svg
           onClick={onClickSVG}
           xmlns="http://www.w3.org/2000/svg"
-          className="h-16 fill-slate-50 w-16 rounded-md shadow-md p-2.5 absolute right-0 cursor-pointer hover:translate-x-1.5 active:scale-90 ease-in duration-300 top-0 bg-red-400"
+          className="h-16 fill-slate-50 w-16 rounded-md shadow-md p-2.5 absolute right-0 cursor-pointer lg:hover:translate-x-1.5 lg:active:scale-90 ease-in duration-300 top-0 bg-red-400"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -40,9 +45,16 @@ const ImageInputForm = ({ onChangeInput, onClickBtn, onClickSVG }) => {
           />
         </svg>
         <div className="absolute translate-x-1/2 top-[130%] right-2/4">
+          <div className={`${hiddenSpin ? 'hidden' : ''}`}>
+            <div className="bg-gradient-to-r from-cyan-500 to-blue-500 lg:hover:translate-y-1.5 ease-in duration-300 flex justify-center items-center rounded-md py-2 px-16 mb-4 shadow-2xl">
+              <span className="inline-block border-gray-300 border-4 w-6 border-t-4 border-t-cyan-500 h-6 rounded-full animate-spin"></span>
+            </div>
+          </div>
           <button
             onClick={onClickBtn}
-            className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:translate-y-1.5 ease-in duration-300 w-20 flex justify-center items-center rounded-md py-2 px-16 mb-4 uppercase shadow-2xl text-slate-50"
+            className={`bg-gradient-to-r from-cyan-500 to-blue-500 lg:hover:translate-y-1.5 ease-in duration-300 w-20 flex justify-center items-center rounded-md py-2 px-16 mb-4 uppercase shadow-2xl text-slate-50 ${
+              hiddenSpin ? '' : 'hidden'
+            }`}
           >
             {'detect'}
           </button>

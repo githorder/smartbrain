@@ -7,11 +7,14 @@ class SignIn extends React.Component {
     this.state = {
       signinEmail: '',
       signinPassword: '',
+      hidden: true,
     };
   }
 
   onClickSignin = () => {
     const { signinEmail, signinPassword } = this.state;
+
+    this.setState({ hidden: false });
 
     fetch('https://smartbrain-api-diyor.herokuapp.com/signin', {
       method: 'POST',
@@ -24,9 +27,11 @@ class SignIn extends React.Component {
       .then((response) => response.json())
       .then((user) => {
         if (user.id) {
+          this.setState({ hidden: true });
           this.props.onRouteChange('home');
           this.props.loadUser(user);
         } else {
+          this.setState({ hidden: true });
           console.log(user);
         }
       })
@@ -103,8 +108,15 @@ class SignIn extends React.Component {
           </div>
 
           <div className="mt-5 flex flex-col w-full">
+            <div className={`${this.state.hidden ? 'hidden' : ''}`}>
+              <div className="h-16 w-full bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer mb-20 shadow-2xl flex items-center justify-center lg:hover:translate-y-1.5 ease-in duration-300">
+                <span className="inline-block border-gray-300 border-4 w-10 border-t-4 border-t-cyan-500 h-10 rounded-full animate-spin"></span>
+              </div>
+            </div>
             <input
-              className="h-16 w-full bg-gradient-to-r from-cyan-500 to-blue-500 uppercase text-slate-50 text-base font-medium cursor-pointer mb-20 shadow-2xl hover:translate-y-1.5 ease-in duration-300"
+              className={`h-16 w-full bg-gradient-to-r from-cyan-500 to-blue-500 uppercase text-slate-50 text-base font-medium cursor-pointer mb-20 shadow-2xl lg:hover:translate-y-1.5 ease-in duration-300 ${
+                this.state.hidden ? '' : 'hidden'
+              }`}
               onClick={this.onClickSignin}
               type="submit"
               value="Sign in"
@@ -112,7 +124,7 @@ class SignIn extends React.Component {
             <div className="w-full text-center">
               <span className="text-base text-[#999]">Not a member? </span>
               <input
-                className="text-base underline text-[#999] cursor-pointer hover:text-cyan-500"
+                className="text-base underline text-[#999] cursor-pointer lg:hover:text-cyan-500"
                 onClick={() => onRouteChange('register')}
                 type="submit"
                 value="Register"

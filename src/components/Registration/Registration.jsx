@@ -8,11 +8,14 @@ class Registration extends React.Component {
       name: '',
       email: '',
       password: '',
+      hidden: true,
     };
   }
 
   onClickRegister = () => {
     const { email, password, name } = this.state;
+
+    this.setState({ hidden: false });
 
     fetch('https://smartbrain-api-diyor.herokuapp.com/register', {
       method: 'POST',
@@ -22,6 +25,7 @@ class Registration extends React.Component {
       .then((response) => response.json())
       .then((user) => {
         if (user.id) {
+          this.setState({ hidden: true });
           this.props.onRouteChange('home');
           this.props.loadUser(user);
         }
@@ -127,9 +131,16 @@ class Registration extends React.Component {
           </div>
 
           <div className="mt-5 w-full">
+            <div className={`${this.state.hidden ? 'hidden' : ''}`}>
+              <div className="h-16 w-full bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer mb-20 shadow-2xl flex items-center justify-center lg:hover:translate-y-1.5 ease-in duration-300">
+                <span className="inline-block border-gray-300 border-4 w-10 border-t-4 border-t-cyan-500 h-10 rounded-full animate-spin"></span>
+              </div>
+            </div>
             <input
               onClick={this.onClickRegister}
-              className="h-16 w-full bg-gradient-to-r from-cyan-500 to-blue-500 uppercase text-slate-50 text-base font-medium cursor-pointer shadow-2xl mb-5 hover:translate-y-1.5 ease-in duration-300"
+              className={`h-16 w-full bg-gradient-to-r from-cyan-500 to-blue-500 uppercase text-slate-50 text-base font-medium cursor-pointer shadow-2xl mb-5 hover:translate-y-1.5 ease-in duration-300 ${
+                this.state.hidden ? '' : 'hidden'
+              }`}
               type="submit"
               value="Register"
             />
